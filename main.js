@@ -14,7 +14,8 @@
 
 	$("#childOne").on("keyup", function(event) {
 		if(event.which === 13) {
-			asyncGETRequest("https://www.googleapis.com/customsearch/v1?key=" + key + "&cx=" + cx + "&q=lectures");
+			var subQuery = $("input.gsc-input").val();
+			asyncGETRequest("https://www.googleapis.com/customsearch/v1?key=" + key + "&cx=" + cx + "&q=" + subQuery);
 		}
 	})
 }());
